@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-Some helper function & Cool logging emos for CocoaLumberjack/Swift.
+CocoaLumberjackSwiftHelper provides some helper function & Cool logging emos for CocoaLumberjack/Swift.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/CocoaLumberjackSwiftHelper"
+  s.homepage         = "https://github.com/egggit/CocoaLumberjackSwiftHelper"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Egg" => "egg.github@gmail.com" }
