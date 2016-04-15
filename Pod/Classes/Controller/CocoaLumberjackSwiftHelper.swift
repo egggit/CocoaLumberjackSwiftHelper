@@ -8,7 +8,7 @@
 import Foundation
 import CocoaLumberjack
 
-public func setupDDlogs() {
+public func setupDDlogs(debug:Bool) {
     
     let ttyLogger = DDTTYLogger.sharedInstance()
     
@@ -17,12 +17,13 @@ public func setupDDlogs() {
     ttyLogger.setForegroundColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), backgroundColor: nil, forFlag: .Debug)
     ttyLogger.setForegroundColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), backgroundColor: nil, forFlag: .Verbose)
     ttyLogger.logFormatter = LogFormatter()
+
     
-    #if DEBUG
-        let logLevel: DDLogLevel = .Warning
-    #else
-        let logLevel: DDLogLevel = .Verbose
-    #endif
+    var logLevel: DDLogLevel = .Warning
+    
+    if (debug) {
+        logLevel = .Verbose
+    }
     
     DDLog.addLogger(ttyLogger, withLevel: logLevel) // TTY = Xcode console
     DDLog.addLogger(DDASLLogger.sharedInstance(), withLevel: logLevel) // ASL = Apple System Logs

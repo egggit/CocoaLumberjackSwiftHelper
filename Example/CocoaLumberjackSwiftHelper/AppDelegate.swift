@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        setupDDlogs()
+        
+        #if DEBUG
+            setupDDlogs(true)
+        #else
+            setupDDlogs(false)
+        #endif
+        
+        
         
         return true
     }
